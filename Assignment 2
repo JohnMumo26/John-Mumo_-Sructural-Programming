@@ -1,0 +1,92 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int login(){
+// declaring variable
+    int correctpin=1234;
+    int userpin;
+
+    int count = 1;
+
+    while(count<=3){
+
+
+    //capture input of the user
+    printf("please input your pin\n");
+    scanf("%d", &userpin);
+
+
+          //Pin Length verification
+    //user pin verification
+    if(userpin<999){
+        printf("pin too short,must be a four digit number\n");}
+    else if(userpin>9999) {
+        printf("pin too long,must be a four digit number\n");}
+    else if
+        (userpin==correctpin){
+            return 1;
+
+        }
+    else{
+        printf("pin incorrect\n");
+        count++;
+    if (count > 3)
+    {
+            printf("too many attempts account blocked\n");
+            return 0;
+    }
+
+    }
+}
+return 0;
+}
+
+void menu(){
+    int menu;
+    int balance=1000;
+    int amount;
+    int deposit;
+
+            printf("Access granted\n");
+
+            //Ask user choose for menu input
+            printf("choose an operation:\n 1.check balance\n 2.deposit\n 3.withdraw\n 4.exit");
+            scanf("%d", &menu);
+
+            switch(menu){
+                case 1:
+                       printf("your balance is %d", balance);
+                       scanf("%d", &balance);
+                       break;
+                case 2:
+                       printf("enter amaount\n");
+                       scanf ("%d", & deposit);
+                       break;
+                case 3:
+                       printf("enter amount\n");
+                       scanf("%d", &amount);
+                       break;
+                case 4:
+                       printf("exiting system\n");
+                       break;
+                default:
+                       printf("Invalid choice\n");
+                       break;
+          }
+
+
+}
+
+
+
+int main()
+{
+    if(login() == 1){
+        menu();
+    }
+    return 0;
+
+}
+
+
